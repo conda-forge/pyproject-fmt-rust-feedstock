@@ -9,13 +9,16 @@ source:
   sha256: 7b2ab899dc37fea291e8718baee91b02397e039d7ab1f9667ae51fdabe198935
 
 build:
+  number: 2
   script:
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-  number: 1
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - maturin >=1.5.1                        # [build_platform != target_platform]
     - {{ compiler("c") }}
     - {{ compiler("rust") }}
     - {{ stdlib("c") }}
