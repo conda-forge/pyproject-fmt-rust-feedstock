@@ -1,4 +1,4 @@
-{% set version = "1.1.4" %}
+{% set version = "1.1.5" %}
 
 package:
   name: pyproject-fmt-rust
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pyproject-fmt-rust/pyproject_fmt_rust-{{ version }}.tar.gz
-  sha256: 1c709e80c5a06e69af940d1f7e5f4efd4515fd7efe08c75d62f1830ddf05b9c3
+  sha256: 223352e714be6ea9c85b4413d1074c8227261e6e4e8a1056213ada2f880af62b
 
 build:
   number: 0
