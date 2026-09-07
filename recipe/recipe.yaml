@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: 1.2.1
+  version: "1.2.1"
   maturin_min: "1.5.1"
   python_check_max: "3.14"
 
@@ -17,6 +17,8 @@ source:
 build:
   number: 2
   skip: is_abi3 and not is_python_min
+  python:
+    version_independent: ${{ is_abi3 }}
   script:
     env:
       CARGO_PROFILE_RELEASE_STRIP: symbols
